@@ -25,6 +25,8 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
+import pl.edu.icm.unity.webui.common.EudatFooter;
+import pl.edu.icm.unity.webui.common.EudatHeader;
 
 /**
  * The main entry point of the web administration UI.
@@ -64,15 +66,20 @@ public class UserHomeUI extends UnityUIBase implements UnityWebUI
 	protected void appInit(VaadinRequest request)
 	{
 		VerticalLayout contents = new VerticalLayout();
-		TopHeader header = new TopHeader(endpointDescription.getDisplayedName().getValue(msg), 
+                
+		TopHeader subHeader = new TopHeader(endpointDescription.getDisplayedName().getValue(msg), 
 				authnProcessor, msg);
-		contents.addComponent(header);
+		//contents.addComponent(header);
 
 		userAccount.initUI(config, sandboxRouter, getSandboxServletURLForAssociation());
-		
 		userAccount.setWidth(80, Unit.PERCENTAGE);
-		contents.addComponent(userAccount);
+                userAccount.setId("main");
+                
+                EudatFooter footer = new EudatFooter();
+                EudatHeader header = new EudatHeader(subHeader);
+		contents.addComponents(header, userAccount, footer);
 		contents.setComponentAlignment(userAccount, Alignment.TOP_CENTER);
+                contents.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 		contents.setExpandRatio(userAccount, 1.0f);
 		
 		setSizeFull();
