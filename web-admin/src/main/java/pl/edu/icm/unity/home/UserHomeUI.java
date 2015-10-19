@@ -69,10 +69,10 @@ public class UserHomeUI extends UnityUIBase implements UnityWebUI
                 
 		TopHeader subHeader = new TopHeader(endpointDescription.getDisplayedName().getValue(msg), 
 				authnProcessor, msg);
-		//contents.addComponent(header);
 
 		userAccount.initUI(config, sandboxRouter, getSandboxServletURLForAssociation());
 		userAccount.setWidth(80, Unit.PERCENTAGE);
+                userAccount.setHeight(100, Unit.PERCENTAGE);
                 userAccount.setId("main");
                 
                 EudatFooter footer = new EudatFooter();
@@ -81,7 +81,8 @@ public class UserHomeUI extends UnityUIBase implements UnityWebUI
 		contents.setComponentAlignment(userAccount, Alignment.TOP_CENTER);
                 contents.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 		contents.setExpandRatio(userAccount, 1.0f);
-		
+		contents.setHeight(100, Unit.PERCENTAGE);
+                
 		setSizeFull();
 		setContent(contents);
 	}

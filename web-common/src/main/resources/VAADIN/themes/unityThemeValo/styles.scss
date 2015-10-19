@@ -22,9 +22,8 @@ body {
 }
 
 
-#main {
-    padding-bottom: 25px;
-}
+#main { padding-bottom: 25px; overflow: auto; }
+
 #footer {height: 100px; min-height: 100px; font-size: 12px; padding: 20px 50px; bottom: 0; width: 100%; text-align: center; background: #F7F3E9 url("../common/img/color-line.jpg") repeat-x top left; border-top: 1px solid #DDD;}
 #footer .v-link a, #footer .v-link a:visited {color: #333; border-bottom: 0 !important; text-decoration: none !important; padding: 20px 10px; }
 #footer .v-link a:hover {color: #f45d00; border-bottom: 0; text-decoration: underline}
@@ -85,6 +84,7 @@ body {
 Override provided v-app class to remove height: 100% property, this ensure
 the remaining footer space if filled with the body background color
 */
+/*
 .v-app {
         height: auto;
-}
+}*/

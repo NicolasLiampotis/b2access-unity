@@ -172,8 +172,9 @@ public class AuthenticationUI extends UnityUIBase implements UnityWebUI
 		main.addComponent(topBar);
 		main.setSpacing(true);
 		main.setMargin(new MarginInfo(false, true, false, true));
-		main.setWidth(100, Unit.PERCENTAGE);
-                
+		//main.setWidth(100, Unit.PERCENTAGE);
+                //main.setHeight(lastIdp);
+                main.setSizeFull();
                 main.setId("main");
 		main.addComponent(authenticationPanel);
 		main.setComponentAlignment(authenticationPanel, Alignment.TOP_CENTER);
@@ -194,62 +195,22 @@ public class AuthenticationUI extends UnityUIBase implements UnityWebUI
 			main.addComponent(tilesWrapper);
 			main.setComponentAlignment(tilesWrapper, Alignment.TOP_CENTER);
 			main.setExpandRatio(tilesWrapper, 1.0f);
-		}
+                        tilesWrapper.setHeight(100, Unit.PERCENTAGE);
+		} else {
+                    authenticationPanel.setHeight(100, Unit.PERCENTAGE);
+                }
 		
-		VerticalLayout topLevel = new VerticalLayout();
-                /*
-                HorizontalLayout eudatBar = new HorizontalLayout();
-                eudatBar.setId("eudat");
-                eudatBar.setWidth(100, Unit.PERCENTAGE);
-                Link l = new Link("Go to EUDAT website", new ExternalResource("http://www.eudat.eu"));
-                l.setStyleName("eudat-link");
-                eudatBar.addComponent(l);
-                */
-		//headerUIComponent = new AuthenticationTopHeader(msg.getMessage("AuthenticationUI.login", 
-		//		endpointDescription.getDisplayedName().getValue(msg)), localeChoice, msg);
-                //headerUIComponent.setId("header");		
-                
-                /*
-                HorizontalLayout footerLeft = new HorizontalLayout();
-                footerLeft.setId("footer-left");
-                footerLeft.addComponent(new Label("<img src=\"./VAADIN/themes/common/img/european-commission.jpg\">", ContentMode.HTML));
-                footerLeft.addComponent(new Label("EUDAT receives funding from the European Union’s Horizon 2020 research and<br />innovation programme under grant agreement No. 654065. Legal Notice", ContentMode.HTML));
-                
-                HorizontalLayout footerRight = new HorizontalLayout();
-                footerLeft.setId("footer-right");
-                footerRight.addComponent(new Link("Terms of Use", new ExternalResource("http://b2access.eudat.eu/terms-of-use.html")));
-                footerRight.addComponent(new Link("Data Privacy Statement", new ExternalResource("http://b2access.eudat.eu/data-privacy-statement.html")));
-                footerRight.addComponent(new Link("About EUDAT", new ExternalResource("https://eudat.eu/what-eudat")));
+		
 
-                HorizontalLayout footer = new HorizontalLayout();
-                footer.setWidth(100, Unit.PERCENTAGE);
-                
-                footer.addComponent(footerLeft);
-                footer.setComponentAlignment(footerLeft, Alignment.TOP_LEFT);
-                footer.addComponent(footerRight);
-                footer.setComponentAlignment(footerRight, Alignment.TOP_RIGHT);
-
-                HorizontalLayout footerUnity = new HorizontalLayout();
-                footerUnity.setWidth(100, Unit.PERCENTAGE);
-                Link unity = new Link("Powered by Unity-IDM", new ExternalResource("http://unity-idm.eu/"));
-                footerUnity.addComponent(unity);
-                footerUnity.setComponentAlignment(unity, Alignment.MIDDLE_CENTER);
-                
-                VerticalLayout footerRows = new VerticalLayout();
-                footerRows.setId("footer");
-                footerRows.setHeightUndefined();
-		footerRows.setWidth(100, Unit.PERCENTAGE);
-                footerRows.addComponent(footer);
-                footerRows.addComponent(footerUnity);
-                */
-                //topLevel.addComponents(eudatBar, headerUIComponent, main, footerRows);
                 EudatFooter footer = new EudatFooter();
                 EudatHeader header = new EudatHeader(
                         new AuthenticationTopHeader(msg.getMessage("AuthenticationUI.login", endpointDescription.getDisplayedName().getValue(msg)), localeChoice, msg));
-                //topLevel.addComponents(header, headerUIComponent, main, footer);
+                
+                VerticalLayout topLevel = new VerticalLayout();
                 topLevel.addComponents(header, main, footer);
                 topLevel.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
-		topLevel.setWidth(100, Unit.PERCENTAGE);
+		//topLevel.setWidth(100, Unit.PERCENTAGE);
+                topLevel.setSizeFull();
 		topLevel.setExpandRatio(main, 1.0f);
 		
 		setContent(topLevel);
