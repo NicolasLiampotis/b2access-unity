@@ -9,7 +9,21 @@
 
 @mixin unityCommon {
 	
-
+	a {
+		color: $linkColor;
+	}
+	
+	a:hover {
+		color: $linkColorHover;
+	}
+ 
+	.v-slot-u-header {
+		border-top: 10px solid $linkColor;
+		background: $headerBackgroundImage;
+		border-bottom: 1px solid #DDD;
+		padding: 15px;
+	}
+	
     //Overriding the default layout
     		
 	.v-caption-bold {
@@ -82,6 +96,7 @@
 	
 	.u-header {
 		background: $headerBackgroundImage;
+		padding: 5px 0;
 	}
 	
 	.u-textLarge {

@@ -1,5 +1,90 @@
 @import "unityThemeValo.scss";
 
+@include unityThemeValo;
+
+body {
+    background: #F7F3E9;
+}
 .unityThemeValo {
- 	@include unityThemeValo;
+	background: #FFF url(../common/img/bg_page.png) no-repeat center center;
+}
+
+.v-button-link {color: #F45D00;}
+
+.u-textEndpointHeading {
+	text-indent: -9999px;
+	white-space: nowrap;
+	overflow: hidden;
+	background-image: url("../common/img/logo.png");
+	background-repeat: no-repeat;
+	height: 130px;
+	width: 232px;
+}
+
+
+#main {
+    padding-bottom: 25px;
+}
+#footer {height: 100px; min-height: 100px; font-size: 12px; padding: 20px 50px; bottom: 0; width: 100%; text-align: center; background: #F7F3E9 url("../common/img/color-line.jpg") repeat-x top left; border-top: 1px solid #DDD;}
+#footer .v-link a, #footer .v-link a:visited {color: #333; border-bottom: 0 !important; text-decoration: none !important; padding: 20px 10px; }
+#footer .v-link a:hover {color: #f45d00; border-bottom: 0; text-decoration: underline}
+#footer .v-link {text-decoration: none !important; color: #333;}
+
+#header {
+    margin: 0px;
+    padding: 0px;
+    background: url(../common/img/img_header.png) top right no-repeat #FFF;
+}
+
+#header {font-size: 16px; padding: 5px 50px; margin:0;}
+#header .v-link a, #header .v-link a:visited {color: #333; font-weight: 500; border-bottom: 0 !important; text-decoration: none !important; padding: 20px 10px; }
+#header .v-link a:hover {color: #F45D00; border-bottom: 0; text-decoration: underline}
+#header .v-link {text-decoration: none !important; color: #333;}
+
+#eudat { background: #F45D00; color: #FFF; padding: 4px 50px;}
+.eudat-link a, .eudat-link a:visited {color: #FFF; text-decoration: none !important; text-transform: uppercase; font-weight: 500;}
+.eudat-link a:hover {text-decoration: underline; }
+
+#footerLeft img {
+    margin: 0px 10px;
+}
+
+#top-header-buttons {
+    margin-top: 5px;
+}
+
+#top-level {
+    overflow: auto;
+}
+
+.v-slot-u-header {
+	padding: 0 !important;
+}
+
+.v-link {
+	text-decoration: none;
+}
+
+#gwt-uid-6 {
+	display: none;
+}
+
+#header .v-slot {
+	content: "";
+    display: inline-block;
+    height: 100%;
+	vertical-align: middle !important;
+	line-height: 130px;
+}
+
+#header .v-slot:last-child {
+	line-height: normal;
+}
+
+/*
+Override provided v-app class to remove height: 100% property, this ensure
+the remaining footer space if filled with the body background color
+*/
+.v-app {
+        height: auto;
 }
