@@ -22,7 +22,7 @@ public class EudatFooter extends VerticalLayout {
 
         HorizontalLayout footerRight = new HorizontalLayout();
         footerLeft.setId("footer-right");
-        footerRight.addComponent(new Link("Terms of Use", new ExternalResource("https://b2access.eudat.eu/files/terms-of-use.html")));
+        footerRight.addComponent(new Link("Terms of Use", new ExternalResource("https://b2access.eudat.eu/files/B2ACCESS-TOU-v1-22-Oct-2015.pdf")));
         footerRight.addComponent(new Link("Data Privacy Statement", new ExternalResource("https://b2access.eudat.eu/files/B2ACCESS-DPS-v1-20-Oct-2015.pdf")));
         footerRight.addComponent(new Link("About EUDAT", new ExternalResource("https://eudat.eu/what-eudat")));
 

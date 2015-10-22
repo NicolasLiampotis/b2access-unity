@@ -24,8 +24,8 @@ public class AuthenticationTopHeader extends TopHeaderLight
 		super(title, msg);
 		
                 Link[] links = new Link[] {   
-                    new Link("What is B2ACCESS", new ExternalResource("https://b2access.eudat.eu/files/b2access-about.html")),
-                    new Link("User Guide", new ExternalResource("https://b2access.eudat.eu/files/b2access-guide.html")),
+                    new Link("What is B2ACCESS", new ExternalResource("https://b2access.eudat.eu/files/about-b2access.html")),
+                    new Link("User Guide", new ExternalResource("https://eudat.eu/services/userdoc")),
                     new Link("FAQs", new ExternalResource("https://b2access.eudat.eu/files/b2access-faq.html")),
                     new Link("Contact", new ExternalResource("http://eudat.eu/support-request?Service=B2ACCESS"))
                 };
