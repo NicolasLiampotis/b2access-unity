@@ -21,7 +21,7 @@ public class EudatHeader extends VerticalLayout {
         HorizontalLayout bar = new HorizontalLayout();
         bar.setId("eudat");
         bar.setWidth(100, Unit.PERCENTAGE);
-        Link l = new Link("Go to EUDAT website", new ExternalResource("https://www.eudat.eu"));
+        Link l = new Link("Go to EUDAT website", new ExternalResource("https://eudat.eu"));
         l.setStyleName("eudat-link");
         bar.addComponent(l);
         
